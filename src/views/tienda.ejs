@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style_productos.css">
+     <title>Tienda virtual</title>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <header id="header" class="header">
+            <div id="ruta" class="ruta">
+                <h1 class="marca"><a href="/"> Tienda </a> </h1>
+
+            </div>
+            <div class="carritoContainer">
+                <img id="carrito" class="cart" src="images/cart.png" alt="">
+                <h3 id="header_h3" class="cantidadprodutos_h3">0</h3>
+            </div>
+            </header>
+        </header>
+
+
+      
+
+            <div class="containerCarrito invisible" id="containerCarrito">
+                <div id="productos_carrito" class="productos_carrito">
+                   
+                </div>
+                </div>
+
+
+
+    <div id="cards" class="cards">
+    
+<!-- MUESTRA PRODUCTOS -->    
+<% productos.forEach(producto => { %>
+    
+    <div class="card">
+        <h3 class="card_title"><%= producto.nombre %></h3>
+        <img class=" card_img" src="images/<%= producto.imgsrc %>" alt="">
+        <div class="barraInferior">
+            <h3 class="descripcion"><%= producto.descripcion %></h3>
+
+            <div class="preciostock">
+                <h3 class="precio">$<%= producto.precio %></h3>
+                <h3 class="stock_visor">Stock: <%= +producto.stock %></h3>
+            </div>
+
+            <div class="card_botones">
+                <button class="<%= `agregar_boton ${producto._id} ${producto.stock}` %>">Agregar al carrito</button>
+                <button class="<%= `comprar_boton ${producto._id} ${producto.stock}` %>">Comprar</button>
+            </div>            
+            
+        </div>
+
+    </div>
+    <% }) %>
+    
+    
+
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="scripts_carrito.js"></script>
+</body>
+</html>
