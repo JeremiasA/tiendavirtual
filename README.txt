@@ -14,13 +14,11 @@ desde el carrito se quitan productos.
 	- ejs (view engine)
 	- mercadopago
 	- express-session
-	-connect-mongo(store)
+	- connect-mongo(store)
 
 - MongoDB
 
 - HTML5, CSS3, Javascript(ES6)
-
-- MVC(Model View Controller)
 
 
 
@@ -28,8 +26,21 @@ desde el carrito se quitan productos.
 
 Este pequeño proyecto es parte de mi primer experiencia práctica en la construcción de una tienda virtual.
 
-El servMediante NodeJs y un motor de plantillas (EJS)
+El servidor está desarrollado en NodeJs. 
 
-HEROKU: https://controlventaspedidos.herokuapp.com/
+Mediante un motor de plantillas (EJS) se carga la página principal de forma rápida favoreciendeo el SEO y velocidad de carga.
+Luego se realizan las peticiones a través de forma asíncrona a través de 'axios' para dar una mejor experiencia de usuario.
 
-<footer> @Desarrollado por Jeremias Amestoy para GamesFriends. </footer> 
+Cuenta con sesiones de usuarios que mantienen los carritos con los productos durante 7 dias, aa través de express-session y 
+connect-mongo como store para almacenar las sesiones. 
+
+Los productos de los carritos de diversas sesiones se guardan en una única colección. Al consultar su carrito un usuario recibe
+solo la visualización de los productos que contienen su sessionID.
+
+
+
+*********************************************************************
+
+HEROKU: https://tiendavirtualjea.herokuapp.com/
+
+@Desarrollado por Jeremias Amestoy : jeremiasamestoy@gmail.com
